@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F2104" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Api" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-9w-2pe">
+                                <rect key="frame" x="0.0" y="94" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="nBy-Hr-pPt"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEx-Ay-jgv">
+                                <rect key="frame" x="90" y="190" width="194" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="Oz8-xX-yHN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAD: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfW-zg-zXP">
+                                <rect key="frame" x="90" y="289" width="194" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="kkn-Ur-Wft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHF: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwr-EZ-GfN">
+                                <rect key="frame" x="90" y="388" width="194" height="91"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CfW-zg-zXP" firstAttribute="top" secondItem="bEx-Ay-jgv" secondAttribute="bottom" constant="8" symbolic="YES" id="1om-Nx-Uei"/>
+                            <constraint firstAttribute="trailing" secondItem="Jhv-9w-2pe" secondAttribute="trailing" id="CwV-2w-4VJ"/>
+                            <constraint firstItem="Jhv-9w-2pe" firstAttribute="centerX" secondItem="bEx-Ay-jgv" secondAttribute="centerX" id="InP-w5-g7L"/>
+                            <constraint firstItem="CfW-zg-zXP" firstAttribute="leading" secondItem="Uwr-EZ-GfN" secondAttribute="leading" id="PpC-3U-JWf"/>
+                            <constraint firstItem="bEx-Ay-jgv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="74" id="VJ6-tC-U7O"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uwr-EZ-GfN" secondAttribute="bottom" constant="188" id="YcK-k5-8wC"/>
+                            <constraint firstItem="Uwr-EZ-GfN" firstAttribute="top" secondItem="CfW-zg-zXP" secondAttribute="bottom" constant="8" symbolic="YES" id="ZWT-w2-bzM"/>
+                            <constraint firstItem="bEx-Ay-jgv" firstAttribute="top" secondItem="Jhv-9w-2pe" secondAttribute="bottom" constant="40" id="fNw-My-B82"/>
+                            <constraint firstItem="CfW-zg-zXP" firstAttribute="trailing" secondItem="Uwr-EZ-GfN" secondAttribute="trailing" id="fp9-7a-YuC"/>
+                            <constraint firstItem="Jhv-9w-2pe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jsW-Q2-PdO"/>
+                            <constraint firstItem="bEx-Ay-jgv" firstAttribute="leading" secondItem="CfW-zg-zXP" secondAttribute="leading" id="rQx-Ej-w1T"/>
+                            <constraint firstItem="Jhv-9w-2pe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="74" id="tlI-27-bli"/>
+                            <constraint firstItem="bEx-Ay-jgv" firstAttribute="trailing" secondItem="CfW-zg-zXP" secondAttribute="trailing" id="u37-IE-WKa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cadLabel" destination="CfW-zg-zXP" id="jYL-FW-92h"/>
+                        <outlet property="chfLabel" destination="Uwr-EZ-GfN" id="jHl-xB-uHZ"/>
+                        <outlet property="searchBar" destination="Jhv-9w-2pe" id="R6Y-a2-Xvb"/>
+                        <outlet property="usdLabel" destination="bEx-Ay-jgv" id="jnu-t4-3C4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
